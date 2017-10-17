@@ -43,7 +43,7 @@ int queue_id, port_in_id, port_out_id;
 int bpm = BPM;
 int resolution = TICKS_PER_QUARTER;
 int osc_port = OSC_PORT;
-int start = TRUE;
+int start = FALSE;
 
 void usage()
 {
@@ -330,7 +330,7 @@ int parse_options(int argc, char *argv[])
 	};
 
 	while (1) {
-		c = getopt_long(argc, argv, "hp:r:t:",
+		c = getopt_long(argc, argv, "hp:r:st:",
 				long_options, &option_index);
 		if (c == -1)
 			break;
