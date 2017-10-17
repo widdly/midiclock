@@ -87,39 +87,6 @@ void open_sequencer()
 	}
 }
 
-/* Subscribe to a dest port. It's name or address must allready in the
- * global variable port_address.
- */
-/*
-void subscribe()
-{
-	snd_seq_addr_t dest, source;
-	snd_seq_port_subscribe_t *subs;
-
-	source.client = snd_seq_client_id(seq_handle);
-	source.port = port_out_id;
-	if (snd_seq_parse_address(seq_handle, &dest, port_address) < 0) {
-		fprintf(stderr, "Invalid source address %s\n", port_address);
-		snd_seq_close(seq_handle);
-		exit(EXIT_FAILURE);
-	}
-	snd_seq_port_subscribe_alloca(&subs);
-	snd_seq_port_subscribe_set_sender(subs, &source);
-	snd_seq_port_subscribe_set_dest(subs, &dest);
-	snd_seq_port_subscribe_set_queue(subs, queue_id);
-	snd_seq_port_subscribe_set_time_update(subs, 1);
-	if (snd_seq_get_port_subscription(seq_handle, subs) == 0) {
-		fprintf(stderr, "Connection is already subscribed\n");
-		snd_seq_close(seq_handle);
-		exit(EXIT_FAILURE);
-	}
-	if (snd_seq_subscribe_port(seq_handle, subs) < 0) {
-		fprintf(stderr, "Connection failed (%s)\n", snd_strerror(errno));
-		snd_seq_close(seq_handle);
-		exit(EXIT_FAILURE);
-	}
-}
-*/
 /*
  * Queue commands
  *
