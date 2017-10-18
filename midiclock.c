@@ -70,7 +70,7 @@ void open_sequencer()
 		fprintf(stderr, "Error opening ALSA sequencer\n");
 		exit(EXIT_FAILURE);
 	}
-	snd_seq_set_client_name(seq_handle, "Metronome");
+	snd_seq_set_client_name(seq_handle, "midiclock");
 	if ((port_out_id = snd_seq_create_simple_port(seq_handle, "output",
 			SND_SEQ_PORT_CAP_READ | SND_SEQ_PORT_CAP_SUBS_READ,
 			SND_SEQ_PORT_TYPE_APPLICATION | SND_SEQ_PORT_TYPE_MIDI_GENERIC )) < 0) {
